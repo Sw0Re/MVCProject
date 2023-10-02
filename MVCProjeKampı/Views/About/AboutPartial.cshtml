@@ -12,17 +12,17 @@
             @using (Html.BeginForm("AddAbout", "About", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
         <div class="modal-body">
-            <label>Hakkımızda Metin 1</label>
+            <label>Hakkımızda Metin: 1</label>
             @*<input type="text" name="AboutDetails1" class="form-control" />*@
             @Html.TextBoxFor(x => x.AboutDetails1, new { @class = "form-control", required = "required" })
             @Html.ValidationMessageFor(x => x.AboutDetails1)
             <br />
-            <label>Hakkımızda Metin 2</label>
+            <label>Hakkımızda Metin: 2</label>
             @*<input type="text" name="AboutDetails2" class="form-control" />*@
             @Html.TextBoxFor(x => x.AboutDetails2, new { @class = "form-control", required = "required" })
             @Html.ValidationMessageFor(x => x.AboutDetails2)
             <br />
-            <label>Hakkımızda Görsel 1</label>
+            <label>Hakkımızda Görsel: 1</label>
             <br />
             @Html.TextBoxFor(x => x.AboutImage1, new { type = "file", required = "required" })
             @Html.ValidationMessageFor(x => x.AboutImage1)
