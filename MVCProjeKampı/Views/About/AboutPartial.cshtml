@@ -1,0 +1,53 @@
+﻿@model EntityLayer.Concrete.About
+<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Yeni Hakkımızda Yazı Girişi
+</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Hakkımızda Metin Girişi</h2>
+            </div>
+            @using (Html.BeginForm("AddAbout", "About", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+        <div class="modal-body">
+            <label>Hakkımızda Metin 1</label>
+            @*<input type="text" name="AboutDetails1" class="form-control" />*@
+            @Html.TextBoxFor(x => x.AboutDetails1, new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(x => x.AboutDetails1)
+            <br />
+            <label>Hakkımızda Metin 2</label>
+            @*<input type="text" name="AboutDetails2" class="form-control" />*@
+            @Html.TextBoxFor(x => x.AboutDetails2, new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(x => x.AboutDetails2)
+            <br />
+            <label>Hakkımızda Görsel 1</label>
+            <br />
+            @Html.TextBoxFor(x => x.AboutImage1, new { type = "file", required = "required" })
+            @Html.ValidationMessageFor(x => x.AboutImage1)
+            <br />
+            @*<input type="file" name="AboutImage1" class="form-control" data-val="true" data-val-required="Dosya Boş Geçilemez" />*@
+
+            @*<input type="text" name="AboutImage1" class="form-control" />*@
+
+            <br />
+            <label>Hakkımızda Görsel 2</label>
+            <br />
+            @Html.TextBoxFor(x => x.AboutImage2, new { type = "file", required = "required" })
+            @Html.ValidationMessageFor(x => x.AboutImage2)
+            @*<input type="file" name="AboutImage2" class="form-control" data-val="true" data-val-required="Dosya Boş Geçilemez" />*@
+            @*<input type="text" name="AboutImage2" class="form-control" />*@
+             <br />
+            <br />
+            <button class="btn btn-success">Kaydet</button>
+        </div>
+          
+
+
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
